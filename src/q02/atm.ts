@@ -1,21 +1,23 @@
 {
-    const accountBalanced = +process.argv[2];
-    const withDraw = +process.argv[3];
+    const accountBalanced = process.argv[2];
+    const withDraw = process.argv[3];
+    const accountBalancedN = +accountBalanced
+    const withDrawN = +withDraw
 
-    if (Number.isNaN(accountBalanced) || Number.isNaN(withDraw)) {
+    if (Number.isNaN(accountBalancedN) || Number.isNaN(withDrawN)) {
         console.log("Invalid Input");
         process.exit();
     }
 
-    if (accountBalanced === 0 || withDraw === 0){
+    if (accountBalanced === "" || withDraw === ""){
         console.log("Invalid Input");
         process.exit();
     }
 
-    if (withDraw > 5000){
+    if (withDrawN > 5000){
         console.log("Exceeds per-withdrawal limit");
     }
-    else if (withDraw > accountBalanced){
+    else if (withDrawN > accountBalancedN){
         console.log("Insufficient balance");
     }
     else {
