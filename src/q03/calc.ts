@@ -5,7 +5,7 @@
   const A: number = parseFloat(argA);
   const B: number = parseFloat(argB); 
 
-  let result: number;
+  let result;
   switch (op){
     case 'add': {
       result = A+B;
@@ -21,16 +21,16 @@
     }
     case 'div': {
       if (B === 0){
-        console.error('Error : cannot divide by zero');
+        console.error('Invalid input');
         process.exit();
       }
       result = A/B;
       break;
     }
     default :{
-      console.error("Invalid input");
+      console.error('Invalid operator');
       process.exit();
     }
   }
-  console.log(result);
+  console.log(String(result));
 }
