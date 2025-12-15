@@ -2,10 +2,12 @@
     const accountBalanced = +process.argv[2];
     const withDraw = +process.argv[3];
 
-    console.log(accountBalanced);
-    console.log(withDraw);
-
     if (Number.isNaN(accountBalanced) || Number.isNaN(withDraw)) {
+        console.log("Invalid Input");
+        process.exit();
+    }
+
+    if (accountBalanced === 0 || withDraw === 0){
         console.log("Invalid Input");
         process.exit();
     }
